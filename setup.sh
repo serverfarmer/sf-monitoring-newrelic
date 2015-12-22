@@ -5,12 +5,14 @@ if [ -x /usr/sbin/nrsysmond ]; then
 	exit 0
 fi
 
-read -p "newrelic.com license key: " LICENSE
+if [ "$NEWRELIC_LICENSE" = "" ]; then
+	read -p "newrelic.com license key: " NEWRELIC_LICENSE
+fi
 
-if [ ${#LICENSE} != 40 ]; then
+if [ ${#NEWRELIC_LICENSE} != 40 ]; then
 	echo "error: invalid license key length"
 	exit 1
-elif ! [[ $LICENSE =~ ^[a-z0-9]+$ ]]; then
+elif ! [[ $NEWRELIC_LICENSE =~ ^[a-z0-9]+$ ]]; then
 	echo "error: license key contains invalid characters"
 	exit 1
 fi
@@ -21,7 +23,7 @@ apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 548C16BF
 apt-get update
 apt-get install newrelic-sysmond
 
-nrsysmond-config --set license_key=$LICENSE
+nrsysmond-config --set license_key=$NEWRELIC_LICENSE
 nrsysmond-config --set ssl=true
 
 /etc/init.d/newrelic-sysmond start
