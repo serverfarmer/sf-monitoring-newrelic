@@ -1,4 +1,5 @@
 #!/bin/bash
+. /opt/farm/scripts/init
 
 if [ -x /usr/sbin/nrsysmond ]; then
 	echo "newrelic-sysmond already installed"
