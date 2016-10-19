@@ -32,12 +32,17 @@ if [ ! -s $cfg ]; then
 	exit 0
 fi
 
+if [ "$OSTYPE" = "netbsd" ]; then
+	echo "skipping newrelic-sysmond setup, unsupported system"
+	exit 0
+fi
+
 if [ "$OSTYPE" = "debian" ]; then
 	wget -O /etc/apt/sources.list.d/newrelic.list http://download.newrelic.com/debian/newrelic.list
 	apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 548C16BF
 	apt-get update
 	apt-get install newrelic-sysmond
-else
+elif [ "$OSTYPE" = "redhat" ]; then
 	rpm -Uvh https://download.newrelic.com/pub/newrelic/el5/i386/newrelic-repo-5-3.noarch.rpm
 	yum install newrelic-sysmond
 fi
