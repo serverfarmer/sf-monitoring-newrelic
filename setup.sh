@@ -39,7 +39,7 @@ fi
 
 if [ "$OSTYPE" = "debian" ]; then
 	wget -O /etc/apt/sources.list.d/newrelic.list http://download.newrelic.com/debian/newrelic.list
-	apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 548C16BF
+	apt-key adv --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys 548C16BF
 	apt-get update
 	apt-get install newrelic-sysmond
 elif [ "$OSTYPE" = "redhat" ]; then
