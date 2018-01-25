@@ -1,3 +1,4 @@
-sf-monitoring-newrelic extension connects current server to NewRelic server
-monitoring service. It is compatible with all Debian / Ubuntu versions
-supported by NewRelic itself.
+sf-monitoring-newrelic extension is responsible for configuring
+New Relic license key on current host. It doesn't do anything
+else, and it's meant to be used as a dependency extension for
+other extensions.
