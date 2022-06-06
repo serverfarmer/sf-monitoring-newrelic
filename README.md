@@ -7,7 +7,9 @@ This repository contains old, deprecated extension to Server Farmer.
 
 ### 2012-2015
 
-New Relic was used by Server Farmer authors since around 2012-13 - in fact, we were its early adopters in Allegro.pl (of paid version, at larger scale). And then we also wanted to implement it (in free version) as an automated service discovery, monitoring and alerting platform for our side customers.
+New Relic was used by Server Farmer authors since around 2012-13 - in fact, we were its early adopters in Allegro.pl (of paid version, at larger scale). We even got a few [T-shirts](https://newrelic.com/blog/nerd-life/how-many-t-shirts-has-new-relic-given-out-in-the-last-2-years) from them :)
+
+We were so satisfied of their services, that we also wanted to implement them (this time in free version) as an automated service discovery, monitoring and alerting platform for our side customers.
 
 Initial implementations for particular customers were made in 2013 - and the final, universal implementation in Server Farmer, meeting its code quality and separation from customer-specific stuff, was finished around 2014-15.
 
