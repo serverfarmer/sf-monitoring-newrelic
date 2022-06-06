@@ -36,7 +36,7 @@ https://discuss.newrelic.com/t/important-upcoming-changes-for-new-relic-servers-
 
 We decided to replace New Relic Servers with combination of 3 separate services:
 
-1. Heartbeat subproject (implementation finished in 2018) - for [service discovery](https://github.com/serverfarmer/heartbeat-linux), and [heartbeat service](https://github.com/serverfarmer/heartbeat-server) itself. So each server reports to Heartbeat every 2 minutes, what was detected to be alive.
+1. Heartbeat subproject (implementation finished in 2018) - for [service discovery](https://github.com/serverfarmer/heartbeat-linux), and [heartbeat service](https://github.com/serverfarmer/heartbeat-server) itself. So each server reports to Heartbeat every 2 minutes, which services were detected to be alive.
 
 2. Any internal or external monitoring service (possibly separate for each customer) - to query Heartbeat server and send email/push/Slack/Teams alerts about dead services. We choosed [UptimeRobot](https://uptimerobot.com/), since back then, it was almost 10x cheaper than competing [StatusCake](https://www.statuscake.com/) and [Pingdom](https://www.pingdom.com/) (at least for bigger plans), while having enough quality.
 
@@ -46,12 +46,14 @@ We also decided to drop most raw metrics and convert them to simple boolean aliv
 
 At that time, we didn't touch New Relic Plugins.
 
-### 2019-2022
+### 2019-2021
 
 In early 2021, New Relic made another announcement, about New Relic Plugins:
 
 https://discuss.newrelic.com/t/new-relic-plugin-eol-wednesday-june-16th-2021/127267
 
 Fortunately, we managed to migrate all remaining monitoring services from New Relic to other platforms yet in 2019, so it didn't affect our customers at all.
+
+### 2022
 
 In 2022, as a part of the new roadmap for Server Farmer, we plan to finally remove several features deprecated in past years, including anything related to New Relic.
